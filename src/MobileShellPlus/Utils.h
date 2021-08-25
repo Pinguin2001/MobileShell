@@ -45,6 +45,7 @@ public:
 	static void SetWinTaskbarIcons(WinTaskbarIconSize size);
 	static void SetWinTaskbarSize(int area, int size);
 	static bool IsWindows11();
+	static bool IsMobileCellularSupported();
 };
 
 

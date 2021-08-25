@@ -10,7 +10,7 @@
   <Identity
     Name="LumiaWOA.MobileShell"
     Publisher="CN=Windows On Lumia Development Second Party Shell Software 2020"
-    Version="0.1.2500.0" />
+    Version="0.1.2501.0" />
 
   <Properties>
     <DisplayName>MobileShell</DisplayName>

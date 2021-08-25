@@ -200,7 +200,7 @@ void SetRadioStatus(Radio radio)
 	if (radio.Kind() == RadioKind::MobileBroadband)
 	{
 		//99%, not exactly sure --> Airplane mode
-		if (radio.State() != RadioState::On)
+		if (radio.State() != RadioState::On && Utils::IsMobileCellularSupported())
 		{
 			statusBarW->SetAirplaneMode(true);
 		}

@@ -412,3 +412,18 @@ bool Utils::IsWindows11()
 
 	return result;
 }
+
+bool Utils::IsMobileCellularSupported()
+{
+	OSVERSIONINFOW VersionInformation;
+
+	VersionInformation.dwOSVersionInfoSize = sizeof(OSVERSIONINFOW);
+	BOOL result = GetVersionExW(&VersionInformation);
+
+	if (result)
+	{
+		return VersionInformation.dwBuildNumber <= 18908;
+	}
+
+	return result;
+}
