@@ -8,8 +8,8 @@
   IgnorableNamespaces="uap rescap iot">
 
   <Identity
-    Name="1407ADeltaX.MobileShell"
-    Publisher="CN=8B6B3050-BC98-487A-8EF5-8F8C0CC5340D"
+    Name="LumiaWOA.MobileShell"
+    Publisher="CN=Windows On Lumia Development Second Party Shell Software 2020"
     Version="0.1.2445.0" />
 
   <Properties>

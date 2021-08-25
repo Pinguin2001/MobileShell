@@ -46,7 +46,6 @@ void OnTabletModeChanged(bool istabletmode);
 void GlobalSetupAppBar();
 void ForceFullCoverStartScreen();
 
-
 // .imrsiv also REQUIRES IMAGE_DLLCHARACTERISTICS_FORCE_INTEGRITY, MEANING IT SHOULD BE SIGNED (also, Windows certificate) --> no window(s) on other ZBIDs
 // Or we can cheat by launching a new (suspended) RuntimeBroker process and then inject a dll
 
@@ -75,7 +74,7 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In
 	statusBarW->PreBuild();
 	wind->PreBuild();
 
-	if (Wnf::IsTabletMode())
+	if (Wnf::IsTabletMode() || Utils::IsWindows11())
 		OnTabletModeChanged(true);
 
 	Wnf::SubscribeWnf(WNF_TMCN_ISTABLETMODE, WnfCallback, NULL);
@@ -109,7 +108,7 @@ void GlobalSetupAppBar()
 {
 	while (true)
 	{
-		if (Wnf::IsTabletMode())
+		if (Wnf::IsTabletMode() || Utils::IsWindows11())
 		{
 			OnTabletModeChanged(true);
 			//ForceFullCoverStartScreen();

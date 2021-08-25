@@ -44,6 +44,7 @@ public:
 	static void SetWinTaskbarPosition(WinTaskbarPosition pos);
 	static void SetWinTaskbarIcons(WinTaskbarIconSize size);
 	static void SetWinTaskbarSize(int area, int size);
+	static bool IsWindows11();
 };
 
 

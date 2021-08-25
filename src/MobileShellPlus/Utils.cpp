@@ -397,3 +397,18 @@ bool Utils::SystemUsesLightTheme()
 		return true;
 	}
 }
+
+bool Utils::IsWindows11()
+{
+	OSVERSIONINFOW VersionInformation;
+
+	VersionInformation.dwOSVersionInfoSize = sizeof(OSVERSIONINFOW);
+	BOOL result = GetVersionExW(&VersionInformation);
+
+	if (result)
+	{
+		return VersionInformation.dwBuildNumber >= 21990;
+	}
+
+	return result;
+}

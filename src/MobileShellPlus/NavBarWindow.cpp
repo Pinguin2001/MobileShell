@@ -69,16 +69,26 @@ UIElement NavBarWindow::BuildUIElement()
         </Grid.Resources>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="112"/>
-            <ColumnDefinition Width="112"/>
             <ColumnDefinition Width="112"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="112"/>
+            <ColumnDefinition Width="112"/>
+            <ColumnDefinition Width="112"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="112"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="doubleTapGrid" Grid.ColumnSpan="5" Background="{ThemeResource AppBarBorderThemeBrush}" />
+        <Grid x:Name="doubleTapGrid" Grid.ColumnSpan="7" Background="{ThemeResource AppBarBorderThemeBrush}" />
 
-        <Button x:Name="btnBack" Padding="0" Grid.Column="1" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
+        <Button x:Name="btnExit" Padding="0" Grid.Column="0" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
+            <FontIcon x:Name="fExit" Glyph="&#xE011;" Rotation="0" CenterPoint="10,10,0">
+                <FontIcon.RotationTransition>
+                    <ScalarTransition />
+                </FontIcon.RotationTransition>
+            </FontIcon>
+        </Button>
+
+        <Button x:Name="btnBack" Padding="0" Grid.Column="2" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
             <FontIcon x:Name="fBack" Glyph="&#xE72B;" Rotation="0" CenterPoint="10,10,0">
                 <FontIcon.RotationTransition>
                     <ScalarTransition />
@@ -86,68 +96,73 @@ UIElement NavBarWindow::BuildUIElement()
             </FontIcon>
         </Button>
 
-        <Button x:Name="btnWindows" Padding="0" Grid.Column="2" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
+        <Button x:Name="btnWindows" Padding="0" Grid.Column="3" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
 			<Viewbox x:Name="fWindows" Height="24" Width="24" Rotation="0" CenterPoint="10,10,0">
 				<Canvas Width="87" Height="87">
-					<Path Data="M2.2 11.8l33.5-4.6v34.5H0V14.3C0 13 0.9 12 2.2 11.8z">
-						<Path.Fill>
-							<LinearGradientBrush>
-								<LinearGradientBrush.GradientStops>
-									<GradientStopCollection>
-										<GradientStop Color="#2B75A4" Offset="0"/>
-										<GradientStop Color="#2281B6" Offset="0.2487"/>
-										<GradientStop Color="#08A2EA" Offset="1"/>
-									</GradientStopCollection>
-								</LinearGradientBrush.GradientStops>
-							</LinearGradientBrush>
-						</Path.Fill>
-					</Path>
-            
-					<Path Data="M40 6.5L84.4 0c1.5-0.2 2.9 0.9 2.9 2.5v38.9H40V6.5z">
-						<Path.Fill>
-							<LinearGradientBrush>
-								<LinearGradientBrush.GradientStops>
-									<GradientStopCollection>
-										<GradientStop Color="#0AC6F3" Offset="0"/>
-										<GradientStop Color="#05CCF6" Offset="1"/>
-									</GradientStopCollection>
-								</LinearGradientBrush.GradientStops>
-							</LinearGradientBrush>
-						</Path.Fill>
-					</Path>
-            
-					<Path Data="M0 45.3h35.7v34.6L2.2 75.3C0.9 75.1 0 74 0 72.8V45.3z">
-						<Path.Fill>
-							<LinearGradientBrush>
-								<LinearGradientBrush.GradientStops>
-									<GradientStopCollection>
-										<GradientStop Color="#1B5384" Offset="0"/>
-										<GradientStop Color="#134F8D" Offset="1"/>
-									</GradientStopCollection>
-								</LinearGradientBrush.GradientStops>
-							</LinearGradientBrush>
-						</Path.Fill>
-					</Path>
-            
-					<Path Data="M40 45.8h47.3v38.5c0 1.5-1.3 2.7-2.9 2.5L40 80.5V45.8z">
-						<Path.Fill>
-							<LinearGradientBrush>
-								<LinearGradientBrush.GradientStops>
-									<GradientStopCollection>
-										<GradientStop Color="#08A5EC" Offset="0"/>
-										<GradientStop Color="#0E9ADD" Offset="0.2175"/>
-										<GradientStop Color="#1A84C0" Offset="0.7156"/>
-										<GradientStop Color="#1F7CB5" Offset="1"/>
-									</GradientStopCollection>
-								</LinearGradientBrush.GradientStops>
-							</LinearGradientBrush>
-						</Path.Fill>
-					</Path>
+					<Grid Width="42" Height="42" CornerRadius="4,0,0,0">
+						<Rectangle>
+							<Rectangle.Fill>
+								<LinearGradientBrush>
+									<LinearGradientBrush.GradientStops>
+										<GradientStopCollection>
+											<GradientStop Color="#77effc" Offset="0"/>
+											<GradientStop Color="#50d4ff" Offset="1"/>
+										</GradientStopCollection>
+									</LinearGradientBrush.GradientStops>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+					</Grid>
+
+					<Grid Width="42" Height="42" Canvas.Left="44" CornerRadius="0,4,0,0">
+						<Rectangle>
+							<Rectangle.Fill>
+								<LinearGradientBrush>
+									<LinearGradientBrush.GradientStops>
+										<GradientStopCollection>
+											<GradientStop Color="#5bdcff" Offset="0"/>
+											<GradientStop Color="#30baff" Offset="1"/>
+										</GradientStopCollection>
+									</LinearGradientBrush.GradientStops>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+					</Grid>
+
+					<Grid Width="42" Height="42" Canvas.Top="44" CornerRadius="0,0,0,4">
+						<Rectangle>
+							<Rectangle.Fill>
+								<LinearGradientBrush>
+									<LinearGradientBrush.GradientStops>
+										<GradientStopCollection>
+											<GradientStop Color="#50d4ff" Offset="0"/>
+											<GradientStop Color="#21aeff" Offset="1"/>
+										</GradientStopCollection>
+									</LinearGradientBrush.GradientStops>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+					</Grid>
+
+					<Grid Width="42" Height="42" Canvas.Left="44" Canvas.Top="44" CornerRadius="0,0,4,0">
+						<Rectangle>
+							<Rectangle.Fill>
+								<LinearGradientBrush>
+									<LinearGradientBrush.GradientStops>
+										<GradientStopCollection>
+											<GradientStop Color="#39c1fd" Offset="0"/>
+											<GradientStop Color="#0b9dff" Offset="1"/>
+										</GradientStopCollection>
+									</LinearGradientBrush.GradientStops>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+					</Grid>
 				</Canvas>
 			</Viewbox>            
         </Button>
 
-        <Button x:Name="btnSearch" Padding="0" Grid.Column="3" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
+        <Button x:Name="btnSearch" Padding="0" Grid.Column="4" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
             <FontIcon x:Name="fSearch" Glyph="&#xE11A;" Rotation="0" CenterPoint="10,10,0">
                 <FontIcon.RotationTransition>
                     <ScalarTransition />
@@ -168,7 +183,17 @@ UIElement NavBarWindow::BuildUIElement()
 		SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, 2);
 	};
 	double_tap_grid.DoubleTapped(double_tap_grid_click);
-	
+
+	const auto btn_exit = ins.FindName(L"btnExit").as<Button>();
+	const auto btn_exit_click = [this](IInspectable const&, RoutedEventArgs const&)
+	{
+		//Utils::SetWinTaskbarIcons(WinTaskbarIconSize::TSB_NORMAL);
+		Utils::SetWinTaskbarState(WinTaskbarState::OnTop);
+		Utils::SetWinTaskbarVisible(true);
+		exit(0);
+	};
+	btn_exit.Click(btn_exit_click);
+
 	const auto btn_back = ins.FindName(L"btnBack").as<Button>();
 	const auto btn_back_click = [this](IInspectable const&, RoutedEventArgs const&) 
 	{
