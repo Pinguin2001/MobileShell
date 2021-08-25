@@ -3,14 +3,15 @@
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10"
-  IgnorableNamespaces="uap rescap iot">
+  IgnorableNamespaces="uap uap5 rescap iot">
 
   <Identity
     Name="LumiaWOA.MobileShell"
     Publisher="CN=Windows On Lumia Development Second Party Shell Software 2020"
-    Version="0.1.2501.0" />
+    Version="0.1.2504.0" />
 
   <Properties>
     <DisplayName>MobileShell</DisplayName>
@@ -51,6 +52,17 @@
           <uap:Rotation Preference="portraitFlipped"/>
           <uap:Rotation Preference="landscapeFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
+      <Extensions>
+        <uap5:Extension
+          Category="windows.startupTask"
+          Executable="MobileShellPlus\MobileShellPlus.exe"
+          EntryPoint="Windows.FullTrustApplication">
+          <uap5:StartupTask
+            TaskId="MobileShellStartupId"
+            Enabled="false"
+            DisplayName="Start MobileShell automatically when I login" />
+        </uap5:Extension>
+      </Extensions>
     </Application>
   </Applications>
 

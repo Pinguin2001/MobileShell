@@ -60,43 +60,33 @@ UIElement NavBarWindow::BuildUIElement()
     </Grid.Resources>
 
     <Grid>
-        <Grid.Resources>
-            <Style TargetType="FontIcon">
-                <Setter Property="Foreground" Value="{ThemeResource SysBrush}" />
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-            </Style>
-        </Grid.Resources>
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="112"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="112"/>
             <ColumnDefinition Width="112"/>
             <ColumnDefinition Width="112"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="112"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="doubleTapGrid" Grid.ColumnSpan="7" Background="{ThemeResource AppBarBorderThemeBrush}" />
+        <Grid x:Name="doubleTapGrid" Grid.ColumnSpan="5" Background="{ThemeResource AppBarBorderThemeBrush}" />
 
-        <Button x:Name="btnExit" Padding="0" Grid.Column="0" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
-            <FontIcon x:Name="fExit" Glyph="&#xE011;" Rotation="0" CenterPoint="10,10,0">
+        <Button x:Name="btnExit" Margin="16,0,0,0" Padding="0" Grid.Column="0" Height="48" Width="48" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
+            <FontIcon x:Name="fExit" Glyph="&#xE011;" Rotation="0" CenterPoint="10,10,0" Foreground="{ThemeResource SysBrush}" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <FontIcon.RotationTransition>
                     <ScalarTransition />
                 </FontIcon.RotationTransition>
             </FontIcon>
         </Button>
 
-        <Button x:Name="btnBack" Padding="0" Grid.Column="2" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
-            <FontIcon x:Name="fBack" Glyph="&#xE72B;" Rotation="0" CenterPoint="10,10,0">
+        <Button x:Name="btnBack" Padding="0" Grid.Column="1" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}">
+            <FontIcon x:Name="fBack" Glyph="&#xE0A6;" Rotation="0" CenterPoint="10,10,0" Foreground="{ThemeResource SysBrush}" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <FontIcon.RotationTransition>
                     <ScalarTransition />
                 </FontIcon.RotationTransition>
             </FontIcon>
         </Button>
 
-        <Button x:Name="btnWindows" Padding="0" Grid.Column="3" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
+        <Button x:Name="btnWindows" Padding="0" Grid.Column="2" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
 			<Viewbox x:Name="fWindows" Height="24" Width="24" Rotation="0" CenterPoint="10,10,0">
 				<Canvas Width="87" Height="87">
 					<Grid Width="42" Height="42" CornerRadius="4,0,0,0">
@@ -162,8 +152,8 @@ UIElement NavBarWindow::BuildUIElement()
 			</Viewbox>            
         </Button>
 
-        <Button x:Name="btnSearch" Padding="0" Grid.Column="4" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
-            <FontIcon x:Name="fSearch" Glyph="&#xE11A;" Rotation="0" CenterPoint="10,10,0">
+        <Button x:Name="btnSearch" Padding="0" Grid.Column="3" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CommandBarFlyoutEllipsisButtonStyle}" >
+            <FontIcon x:Name="fSearch" Glyph="&#xE094;" Rotation="0" CenterPoint="10,10,0" Foreground="{ThemeResource SysBrush}" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <FontIcon.RotationTransition>
                     <ScalarTransition />
                 </FontIcon.RotationTransition>
