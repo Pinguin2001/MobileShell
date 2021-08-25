@@ -91,6 +91,7 @@ UIElement StatusBarWindow::BuildUIElement()
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal">
@@ -197,14 +198,15 @@ UIElement StatusBarWindow::BuildUIElement()
 
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="2">
+        <StackPanel Orientation="Horizontal" Grid.Column="3">
             <TextBlock x:Name="batteryPercentage" FontSize="10" Text="5%" VerticalAlignment="Center" Visibility="Visible" TextAlignment="Center" Margin="0,0,3,2" Rotation="0" CenterPoint="9.5,6.5,0" />
 
             <FontIcon x:Name="batteryGlyph" Glyph="&#xEC02;" Margin="4,0" Rotation="0" CenterPoint="12,8,0" />
 
             <TextBlock Margin="3,0,3,2" x:Name="clockTextBox" FontSize="13" Text="05:05" VerticalAlignment="Center" TextAlignment="Center" Rotation="0" CenterPoint="14,8.5,0" />
         </StackPanel>
-        <Button x:Name="actionCenter" Grid.ColumnSpan="3" Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource TextBlockButtonStyle}" />
+        <Button x:Name="actionCenter" Grid.ColumnSpan="2" Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource TextBlockButtonStyle}" />
+        <Button x:Name="controlCenter" Grid.Column="2" Grid.ColumnSpan="2" Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource TextBlockButtonStyle}" />
     </Grid>
 </Grid>)");
 
@@ -332,9 +334,24 @@ UIElement StatusBarWindow::BuildUIElement()
 
 	const auto actionCenter_click = [this](IInspectable const&, RoutedEventArgs const&)
 	{
-		Utils::SendKeyStrokes(VK_LWIN, 0x41); //LETTER A
+		if (Utils::IsWindows11())
+		{
+			Utils::SendKeyStrokes(VK_LWIN, 0x4E); //LETTER N
+		}
+		else
+		{
+			Utils::SendKeyStrokes(VK_LWIN, 0x41); //LETTER A
+		}
 	};
 	actionCenter.Click(actionCenter_click);
+
+	const auto controlCenter = ins.FindName(L"controlCenter").as<Button>();
+
+	const auto controlCenter_click = [this](IInspectable const&, RoutedEventArgs const&)
+	{
+		Utils::SendKeyStrokes(VK_LWIN, 0x41); //LETTER A
+	};
+	controlCenter.Click(controlCenter_click);
 
 #pragma endregion
 

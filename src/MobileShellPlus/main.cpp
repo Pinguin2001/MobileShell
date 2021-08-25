@@ -29,8 +29,8 @@ using namespace Windows::Devices::Radios;
 using namespace Windows::Networking::Connectivity;
 using namespace Windows::ApplicationModel::Calls;
 
-NavBarWindow* wind;
-StatusBarWindow* statusBarW;
+static NavBarWindow* wind;
+static StatusBarWindow* statusBarW;
 std::vector<Radio> radios;
 std::vector<PhoneLine> phoneLines;
 
@@ -363,7 +363,7 @@ void GetWifiSignal()
 	}
 }
 
-void OnTabletModeChanged(bool istabletmode)
+static void OnTabletModeChanged(bool istabletmode)
 {
 	if (istabletmode)
 	{
